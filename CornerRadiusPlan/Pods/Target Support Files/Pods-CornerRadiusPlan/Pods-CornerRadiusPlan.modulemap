@@ -1,0 +1,6 @@
+framework module Pods_CornerRadiusPlan {
+  umbrella header "Pods-CornerRadiusPlan-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05FE885424E15043000EC2FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FE885324E15043000EC2FC /* AppDelegate.swift */; };
+		05FE885624E15043000EC2FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FE885524E15043000EC2FC /* SceneDelegate.swift */; };
+		05FE885824E15043000EC2FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FE885724E15043000EC2FC /* ViewController.swift */; };
+		05FE885B24E15043000EC2FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05FE885924E15043000EC2FC /* Main.storyboard */; };
+		05FE885D24E15046000EC2FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05FE885C24E15046000EC2FC /* Assets.xcassets */; };
+		05FE886024E15046000EC2FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05FE885E24E15046000EC2FC /* LaunchScreen.storyboard */; };
+		05FE886824E15087000EC2FC /* ThreeTimer_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FE886724E15087000EC2FC /* ThreeTimer_Swift.swift */; };
+		05FE886E24E15111000EC2FC /* ThreeTimer_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FE886D24E15111000EC2FC /* ThreeTimer_OC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05FE885024E15043000EC2FC /* Timer_CADisplayLink_GCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer_CADisplayLink_GCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05FE885324E15043000EC2FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		05FE885524E15043000EC2FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		05FE885724E15043000EC2FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05FE885A24E15043000EC2FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05FE885C24E15046000EC2FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05FE885F24E15046000EC2FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		05FE886124E15046000EC2FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05FE886724E15087000EC2FC /* ThreeTimer_Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTimer_Swift.swift; sourceTree = "<group>"; };
+		05FE886B24E15111000EC2FC /* Timer_CADisplayLink_GCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timer_CADisplayLink_GCD-Bridging-Header.h"; sourceTree = "<group>"; };
+		05FE886C24E15111000EC2FC /* ThreeTimer_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeTimer_OC.h; sourceTree = "<group>"; };
+		05FE886D24E15111000EC2FC /* ThreeTimer_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeTimer_OC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05FE884D24E15043000EC2FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05FE884724E15042000EC2FC = {
+			isa = PBXGroup;
+			children = (
+				05FE885224E15043000EC2FC /* Timer_CADisplayLink_GCD */,
+				05FE885124E15043000EC2FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05FE885124E15043000EC2FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05FE885024E15043000EC2FC /* Timer_CADisplayLink_GCD.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05FE885224E15043000EC2FC /* Timer_CADisplayLink_GCD */ = {
+			isa = PBXGroup;
+			children = (
+				05FE885324E15043000EC2FC /* AppDelegate.swift */,
+				05FE885524E15043000EC2FC /* SceneDelegate.swift */,
+				05FE885724E15043000EC2FC /* ViewController.swift */,
+				05FE886724E15087000EC2FC /* ThreeTimer_Swift.swift */,
+				05FE886C24E15111000EC2FC /* ThreeTimer_OC.h */,
+				05FE886D24E15111000EC2FC /* ThreeTimer_OC.m */,
+				05FE885924E15043000EC2FC /* Main.storyboard */,
+				05FE885C24E15046000EC2FC /* Assets.xcassets */,
+				05FE885E24E15046000EC2FC /* LaunchScreen.storyboard */,
+				05FE886124E15046000EC2FC /* Info.plist */,
+				05FE886B24E15111000EC2FC /* Timer_CADisplayLink_GCD-Bridging-Header.h */,
+			);
+			path = Timer_CADisplayLink_GCD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05FE884F24E15043000EC2FC /* Timer_CADisplayLink_GCD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05FE886424E15046000EC2FC /* Build configuration list for PBXNativeTarget "Timer_CADisplayLink_GCD" */;
+			buildPhases = (
+				05FE884C24E15043000EC2FC /* Sources */,
+				05FE884D24E15043000EC2FC /* Frameworks */,
+				05FE884E24E15043000EC2FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timer_CADisplayLink_GCD;
+			productName = Timer_CADisplayLink_GCD;
+			productReference = 05FE885024E15043000EC2FC /* Timer_CADisplayLink_GCD.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05FE884824E15042000EC2FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = CJL;
+				TargetAttributes = {
+					05FE884F24E15043000EC2FC = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+					};
+				};
+			};
+			buildConfigurationList = 05FE884B24E15042000EC2FC /* Build configuration list for PBXProject "Timer_CADisplayLink_GCD" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05FE884724E15042000EC2FC;
+			productRefGroup = 05FE885124E15043000EC2FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05FE884F24E15043000EC2FC /* Timer_CADisplayLink_GCD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05FE884E24E15043000EC2FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05FE886024E15046000EC2FC /* LaunchScreen.storyboard in Resources */,
+				05FE885D24E15046000EC2FC /* Assets.xcassets in Resources */,
+				05FE885B24E15043000EC2FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05FE884C24E15043000EC2FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05FE886E24E15111000EC2FC /* ThreeTimer_OC.m in Sources */,
+				05FE885824E15043000EC2FC /* ViewController.swift in Sources */,
+				05FE885424E15043000EC2FC /* AppDelegate.swift in Sources */,
+				05FE885624E15043000EC2FC /* SceneDelegate.swift in Sources */,
+				05FE886824E15087000EC2FC /* ThreeTimer_Swift.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		05FE885924E15043000EC2FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05FE885A24E15043000EC2FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05FE885E24E15046000EC2FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05FE885F24E15046000EC2FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05FE886224E15046000EC2FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05FE886324E15046000EC2FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05FE886524E15046000EC2FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Timer_CADisplayLink_GCD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eb.Timer-CADisplayLink-GCD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Timer_CADisplayLink_GCD/Timer_CADisplayLink_GCD-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05FE886624E15046000EC2FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Timer_CADisplayLink_GCD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eb.Timer-CADisplayLink-GCD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Timer_CADisplayLink_GCD/Timer_CADisplayLink_GCD-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05FE884B24E15042000EC2FC /* Build configuration list for PBXProject "Timer_CADisplayLink_GCD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05FE886224E15046000EC2FC /* Debug */,
+				05FE886324E15046000EC2FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05FE886424E15046000EC2FC /* Build configuration list for PBXNativeTarget "Timer_CADisplayLink_GCD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05FE886524E15046000EC2FC /* Debug */,
+				05FE886624E15046000EC2FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05FE884824E15042000EC2FC /* Project object */;
+}

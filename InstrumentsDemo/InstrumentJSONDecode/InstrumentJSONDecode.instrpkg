@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+	<id>com.cjl.jsondecode.InstrumentJSONDecode</id>
+	<title>InstrumentJSONDecode</title>
+	<owner>
+		<name>CJL</name>
+	</owner>
+    
+    <!-- 可以理解成一个数据来源 -->
+    <os-signpost-interval-schema>
+        <id>json-parse</id>
+        <title>JSON Decode</title>
+        
+        <!-- 这三个是与项目中 os_signpost 中一一对应 -->
+        <subsystem>"com.cjl.json"</subsystem>
+        <category>"JSONDecode"</category>
+        <name>"Parsing"</name>
+        
+        <!-- 开始匹配-->
+        <start-pattern>
+            <message>"Parsing started"</message>
+        </start-pattern>
+        
+        <!-- 结束匹配-->
+        <!--   ?data-size-value 是一个变量     -->
+        <end-pattern>
+            <message>"Parsing finished SIZE:" ?data-size-value</message>
+        </end-pattern>
+        
+        <!-- 表中的一列 -->
+        <column>
+            <!-- 助记符标识, 在 graph 与 list 中只认这个标识 -->
+            <mnemonic>data-size</mnemonic>
+            <title>JSON Data Size</title>
+            <!-- 数据的类型 size-in-bytes -->
+            <type>size-in-bytes</type>
+            <!-- 显示 data-size 的值，即 ?data-size-value 是 CLIPS 语言的变量  -->
+            <expression>?data-size-value</expression>
+        </column>
+        
+        <!-- 其中 impact 是由 data-size-value 的值决定的，大于 80 时值是 High， 否则为 Low -->
+        <column>
+            <mnemonic>impact</mnemonic>
+            <title>Impact</title>
+            <type>event-concept</type>
+            <!--   &gt; 表示 greater than   &lt; less than   -->
+            <!--  expression标签中是 CLIPS 语句 ：判断 字节数大小  -->
+            <expression>(if (&gt; ?data-size-value 80) then "High" else "Low")</expression>
+        </column>
+    </os-signpost-interval-schema>
+    
+    <!--   创建Instruments   -->
+    <instrument>
+        <id>com.cjl.json</id>
+        <title>JSON Decode</title>
+        <category>Behavior</category>
+        <purpose>Json Decode.</purpose>
+        <icon>Generic</icon>
+        
+        <create-table>
+            <!--  table的唯一标识  -->
+            <id>json-parse</id>
+            <!--  定义每列的数据 -->
+            <schema-ref>json-parse</schema-ref>
+        </create-table>
+        
+        <!-- Define graph to draw for your Instrument (optional) -->
+        <!--   构建图形视图   -->
+        <graph>
+            <title>JSON Decode</title>
+            <lane>
+                <title>JSON Analyse</title>
+                <table-ref>json-parse</table-ref>
+                
+                <!-- 轨道视图显示的数据 -->
+                <plot>
+                    <!-- schema中的助记标识符 -->
+                    <value-from>data-size</value-from>
+                    <color-from>impact</color-from>
+                </plot>
+            </lane>
+        </graph>
+        
+        <!--   构建详细视图   -->
+        <list>
+            <title>data-info</title>
+            <!--  取table的id    -->
+            <table-ref>json-parse</table-ref>
+            <!--  每列显示的数据，通过助记符获取   -->
+            <column>data-size</column>
+            <column>impact</column>
+            <column>duration</column>
+        </list>
+    </instrument>
+
+    <!-- Instruments Developer Help: https://help.apple.com/instruments/developer/mac/current/ -->
+
+    <!-- MARK: Schema Definitions -->
+    <!-- Define point and interval schemas needed to represent the input and output tables your package will use. -->
+    <!-- Two kinds are available: schemas with automatically generated modelers, and schemas that require custom modelers -->
+    <!--   Generated modelers: 'os-log-point-schema', 'os-signpost-interval-schema', 'ktrace-point-schema', 'ktrace-interval-schema' -->
+    <!--   Custom modeler required: 'point-schema', 'interval-schema' -->
+    <!-- To use existing schemas from other packages, declare 'import-schema' elements -->
+
+    <!-- MARK: Modeler Declarations -->
+    <!-- If there are schemas defined that require a custom modeler, each can be declared with a 'modeler' element -->
+    <!-- Modelers are based on CLIPS rules and may define 1..n output schemas, each requiring 1..n input schemas -->
+
+    <!-- MARK: Instrument Definitions -->
+    <!-- Instruments record and display data, creating concrete table requirements that instance modelers and data streams. -->
+    <!-- Any number of 'instrument' elements can be defined; each instrument should provide a cohesive graph and detail experience. -->
+
+    <!-- MARK: Embed Templates -->
+    <!-- Templates may be included and represent a collection of tools configured for a specific tracing workflow -->
+    <!-- Each 'template' element specifies the relative path to a .tracetemplate file in the project -->
+    <!-- To create a template: start with a blank document, configure with instruments desired, and choose "File -> Save as Template" -->
+</package>

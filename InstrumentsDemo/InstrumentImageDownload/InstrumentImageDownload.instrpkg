@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+	<id>com.cjl.imagedownload.InstrumentImageDownload</id>
+	<title>InstrumentImageDownload</title>
+	<owner>
+		<name>CJL</name>
+	</owner>
+    
+    <!-- 提取 os_signpost 标识的 schema -->
+    <import-schema>os-signpost</import-schema>
+    
+    <!-- 自定义一个 shema，即数据源 -->
+    <os-signpost-interval-schema>
+        <id>image-download</id>
+        <title>Image Download</title>
+        
+        <subsystem>"com.cjl.imageload"</subsystem>
+        <category>"ImageLoad"</category>
+        <name>"Background Image"</name>
+        
+        <!-- 数据捕捉 -->
+        <start-pattern>
+            <message>"Image name:" ?image-name ", Caller:" ?caller-address</message>
+        </start-pattern>
+        <end-pattern>
+            <message>"Status:" ?status ", Size:" ?size</message>
+        </end-pattern>
+        
+        <!-- 定义数据结构 -->
+        <column>
+            <mnemonic>image-name</mnemonic>
+            <title>name</title>
+            <type>string</type>
+            <expression>?image-name</expression>
+        </column>
+        
+        <column>
+            <mnemonic>image-size</mnemonic>
+            <title>Size</title>
+            <type>size-in-bytes</type>
+            <expression>?size</expression>
+        </column>
+        
+        <column>
+            <mnemonic>status</mnemonic>
+            <title>Status</title>
+            <type>string</type>
+            <expression>?status</expression>
+        </column>
+        
+        <column>
+            <mnemonic>impact</mnemonic>
+            <title>Impact</title>
+            <type>event-concept</type>
+            <expression>(if (&gt; ?size 2) then "High" else "Low")</expression>
+        </column>
+        
+    </os-signpost-interval-schema>
+    <!--  用于构建存储点的 schema  -->
+    <point-schema>
+        <id>downloader-narrative</id>
+        <title>Narrative</title>
+        
+        <timestamp-column>
+            <mnemonic>time</mnemonic>
+            <title>Timestamp</title>
+            <type>event-time</type>
+        </timestamp-column>
+        
+        <column>
+            <mnemonic>description</mnemonic>
+            <title>Description</title>
+            <type>narrative</type>
+        </column>
+    </point-schema>
+    
+    <!-- 建模器 -->
+    <modeler>
+        <id>com.coderhg.dt.download.Anitipatterns</id>
+        <title>Anti-patterns modeler</title>
+        <purpose>Generates warnings into detected</purpose>
+        
+        <production-system>
+            <rule-path>duplicate-call-detection.clp</rule-path>
+        </production-system>
+        
+        <output>
+            <schema-ref>downloader-narrative</schema-ref>
+            <required-input>
+                <schema-ref>os-signpost</schema-ref>
+            </required-input>
+        </output>
+    </modeler>
+    
+    <!--  构建Instruments  -->
+    <instrument>
+        <id>com.coderhg.imagedownload</id>
+        <title>Image Download</title>
+        <category>Behavior</category>
+        <purpose>Inc.coderhg.imageload</purpose>
+        <icon>Generic</icon>
+        
+        <create-table>
+            <id>image-download-table</id>
+            <schema-ref>image-download</schema-ref>
+        </create-table>
+        
+        <create-table>
+            <id>download-narratives</id>
+            <schema-ref>downloader-narrative</schema-ref>
+        </create-table>
+        
+        <!-- Define graph to draw for your Instrument (optional) -->
+        <graph>
+            <title>Background Images</title>
+            <lane>
+                <title>Images</title>
+                <table-ref>image-download-table</table-ref>
+                
+                <!-- plot, plot-template or histogram elements -->
+                <plot-template>
+                    <instance-by>image-name</instance-by>
+                    <label-format>img: %s</label-format>
+                    <value-from>image-name</value-from>
+                    <color-from>impact</color-from>
+                    <label-from>image-size</label-from>
+                </plot-template>
+            </lane>
+        </graph>
+        
+        <!-- Define at least one detail view for your Instrument -->
+        <list>
+            <title>List:Downloads</title>
+            <table-ref>image-download-table</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>status</column>
+            <column>image-name</column>
+            <column>image-size</column>
+        </list>
+        
+        <!-- 聚合/概括/议程 -->
+        <aggregation>
+            <title>Summary:Downloads Completed</title>
+            <table-ref>image-download-table</table-ref>
+            
+            <!-- 条件 -->
+            <slice>
+                <column>status</column>
+                <equals>
+                    <string>finish</string>
+                </equals>
+            </slice>
+            
+            <!-- 层次/分类 -->
+            <hierarchy>
+                <level>
+                    <column>image-name</column>
+                </level>
+            </hierarchy>
+            
+            <!-- 数量 -->
+            <column>
+                <count/>
+            </column>
+            
+            <!-- 大小总和 -->
+            <column>
+                <sum>image-size</sum>
+            </column>
+            
+        </aggregation>
+        
+        <!-- 时间片 -->
+        <time-slice>
+            <title>Active requests</title>
+            <table-ref>image-download-table</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>image-name</column>
+        </time-slice>
+        
+        <narrative>
+            <title>Narrative</title>
+            <table-ref>download-narratives</table-ref>
+            <time-column>time</time-column>
+            <narrative-column>description</narrative-column>
+        </narrative>
+        
+    </instrument>
+    
+</package>
